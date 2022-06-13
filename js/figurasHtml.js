@@ -8,6 +8,8 @@ const diametroCirculo = radio => radio * 2;
 const perimetroCirculo = radio => diametroCirculo( radio ) * PI;
 const areaCirculo = radio => (radio * radio) * PI;
 
+const alturaTrianguloIsosceles = ( lado, base ) => Math.sqrt( (lado * lado) - ((base * base)/4));
+
 // Cuadrado
 const calcularPerimetroCuadrado = () => {
     const input = document.getElementById('InputCuadrado');
@@ -74,3 +76,13 @@ const calcularDiametroCirculo = () => {
     alert( diametro );
 }
 
+// Triangulo Isosceles
+const calcularAlturaTrianguloIsosceles = () => {
+    const inputLadosIsosceles = document.getElementById('InputLadoIsosceles');
+    const inputBaseIsosceles = document.getElementById('InputBaseIsosceles');
+    const valueLados = parseInt( inputLadosIsosceles);
+    const valueBase = parseInt( inputBaseIsosceles );
+
+    const altura = alturaTrianguloIsosceles( valueLados, valueBase );
+    alert( altura );
+}
